@@ -11,9 +11,16 @@ class Program
 
         HttpClient client = new HttpClient();
 
-        // Finge que somos um navegador
+        // Finge que somos um navegador com mais headers
         client.DefaultRequestHeaders.Add("User-Agent", 
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36");
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
+        client.DefaultRequestHeaders.Add("Accept", 
+            "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8");
+        client.DefaultRequestHeaders.Add("Accept-Language", "pt-BR,pt;q=0.9,en;q=0.8");
+        client.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate, br");
+        client.DefaultRequestHeaders.Add("DNT", "1");
+        client.DefaultRequestHeaders.Add("Connection", "keep-alive");
+        client.DefaultRequestHeaders.Add("Upgrade-Insecure-Requests", "1");
 
         try
         {
@@ -28,8 +35,18 @@ class Program
                 HtmlDocument doc = new HtmlDocument();
                 doc.LoadHtml(html);
 
-                // Cada produto está dentro de um <div> com class "productCard"
-                var produtos = doc.DocumentNode.SelectNodes("//div[contains(@class, 'productCard')]");
+                // Debug: salvar HTML para análise
+                Console.WriteLine("Primeiros 500 caracteres do HTML:");
+                Console.WriteLine(html.Substring(0, Math.Min(500, html.Length)));
+                Console.WriteLine(new string('=', 50));
+
+                // Tentar diferentes seletores para produtos
+                var produtos = doc.DocumentNode.SelectNodes("//div[contains(@class, 'productCard')]")
+                              ?? doc.DocumentNode.SelectNodes("//div[contains(@class, 'product')]")
+                              ?? doc.DocumentNode.SelectNodes("//article[contains(@class, 'product')]")
+                              ?? doc.DocumentNode.SelectNodes("//div[contains(@class, 'item')]");
+
+                Console.WriteLine($"Produtos encontrados: {produtos?.Count ?? 0}");
 
                 if (produtos != null)
                 {
