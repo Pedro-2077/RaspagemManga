@@ -1,6 +1,13 @@
 {
   "version": 1,
   "dependencies": {
-    "net7.0": {}
+    "net7.0": {
+      "HtmlAgilityPack": {
+        "type": "Direct",
+        "requested": "[1.12.1, )",
+        "resolved": "1.12.1",
+        "contentHash": "SP6/2Y26CXtxjXn0Wwsom9Ek35SNWKHEu/IWhNEFejBSSVWWXPRSlpqpBSYWv1SQhYFnwMO01xVbEdK3iRR4hg=="
+      }
+    }
   }
 }

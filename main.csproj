@@ -6,4 +6,8 @@
     <StartupObject>Program</StartupObject>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.12.1" />
+  </ItemGroup>
+
 </Project>
