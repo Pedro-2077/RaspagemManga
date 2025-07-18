@@ -22,10 +22,10 @@ Ele percorre todas as páginas da categoria e extrai:
 
 1. Clone este repositório:
 
-bash
+```bash
 git clone https://github.com/Pedro-2077/RaspagemManga.git
 cd RaspagemManga
-````
+```
 
 2. Restaure os pacotes e compile:
 
