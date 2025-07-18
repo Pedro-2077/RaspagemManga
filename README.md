@@ -27,7 +27,7 @@ Ele percorre todas as páginas da categoria e extrai:
 ```bash
 git clone https://github.com/Pedro-2077/RaspagemManga.git
 cd RaspagemManga
-````
+```
 
 2. Restaure os pacotes e compile:
 
@@ -69,6 +69,6 @@ dotnet run
 
 Este scraper é apenas para fins educacionais. Consulte os **Termos de Uso** do site antes de realizar coletas em larga escala.
 
-```
+
 
 
