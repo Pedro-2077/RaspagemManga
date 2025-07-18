@@ -1,9 +1,3 @@
-
----
-
-### 📄 `README.md`
-
-````markdown
 # 🥷 Capitão Onigiri Scraper
 
 Este projeto é um **web scraper em C#** que coleta informações de produtos da seção de mangás avulsos do site [Capitão Onigiri](https://www.capitaoonigiri.com.br).
@@ -27,7 +21,7 @@ Ele percorre todas as páginas da categoria e extrai:
 ```bash
 git clone https://github.com/Pedro-2077/RaspagemManga.git
 cd RaspagemManga
-
+```
 
 2. Restaure os pacotes e compile:
 
@@ -47,7 +41,6 @@ dotnet run
 1. Acessa a página 1 da categoria `mangas avulsos`.
 2. Descobre automaticamente o total de páginas disponíveis.
 3. Itera por cada página e extrai:
-
    * Nome do mangá
    * Preço (sem símbolo de moeda)
    * URL da imagem do produto
@@ -68,7 +61,3 @@ dotnet run
 ## ⚠️ Aviso
 
 Este scraper é apenas para fins educacionais. Consulte os **Termos de Uso** do site antes de realizar coletas em larga escala.
-
-
-
-
